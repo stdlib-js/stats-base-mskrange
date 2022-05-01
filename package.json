@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/stats-base-mskrange",
-  "version": "0.0.0",
+  "version": "0.0.7",
   "description": "Calculate the range of a strided array according to a mask.",
   "license": "Apache-2.0",
   "author": {
