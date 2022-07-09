@@ -61,7 +61,9 @@ If no recognized module system is present, access bundle contents via the global
 ```html
 <script type="text/javascript">
 (function () {
+(function () {
     window.mskrange;
+})();
 })();
 </script>
 ```
@@ -182,6 +184,7 @@ var v = mskrange.ndarray( N, x, 2, 1, mask, 2, 1 );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-mskrange@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
+(function () {
 
 var mask;
 var x;
@@ -203,6 +206,7 @@ console.log( mask );
 var v = mskrange( x.length, x, 1, mask, 1 );
 console.log( v );
 
+})();
 })();
 </script>
 </body>
@@ -309,17 +313,17 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/stats/base/dmskrange]: https://github.com/stdlib-js/stats-base-dmskrange/tree/umd
+[@stdlib/stats/base/dmskrange]: https://github.com/stdlib-js/stats-base-dmskrange/tree/umd/tree/umd
 
-[@stdlib/stats/base/range]: https://github.com/stdlib-js/stats-base-range/tree/umd
+[@stdlib/stats/base/range]: https://github.com/stdlib-js/stats-base-range/tree/umd/tree/umd
 
-[@stdlib/stats/base/mskmax]: https://github.com/stdlib-js/stats-base-mskmax/tree/umd
+[@stdlib/stats/base/mskmax]: https://github.com/stdlib-js/stats-base-mskmax/tree/umd/tree/umd
 
-[@stdlib/stats/base/mskmin]: https://github.com/stdlib-js/stats-base-mskmin/tree/umd
+[@stdlib/stats/base/mskmin]: https://github.com/stdlib-js/stats-base-mskmin/tree/umd/tree/umd
 
-[@stdlib/stats/base/nanrange]: https://github.com/stdlib-js/stats-base-nanrange/tree/umd
+[@stdlib/stats/base/nanrange]: https://github.com/stdlib-js/stats-base-nanrange/tree/umd/tree/umd
 
-[@stdlib/stats/base/smskrange]: https://github.com/stdlib-js/stats-base-smskrange/tree/umd
+[@stdlib/stats/base/smskrange]: https://github.com/stdlib-js/stats-base-smskrange/tree/umd/tree/umd
 
 <!-- </related-links> -->
 
