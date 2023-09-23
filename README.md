@@ -50,7 +50,7 @@ The [**range**][range] is defined as the difference between the maximum and mini
 ## Usage
 
 ```javascript
-import mskrange from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-mskrange@deno/mod.js';
+import mskrange from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-mskrange@v0.1.0-deno/mod.js';
 ```
 
 #### mskrange( N, x, strideX, mask, strideMask )
@@ -163,7 +163,7 @@ import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
 import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
 import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@deno/mod.js';
-import mskrange from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-mskrange@deno/mod.js';
+import mskrange from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-mskrange@v0.1.0-deno/mod.js';
 
 var mask;
 var x;
