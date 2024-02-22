@@ -43,19 +43,32 @@ The [**range**][range] is defined as the difference between the maximum and mini
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-mskrange
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import mskrange from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-mskrange@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/stats-base-mskrange/tags). For example,
-
-```javascript
-import mskrange from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-mskrange@v0.2.0-esm/index.mjs';
+var mskrange = require( '@stdlib/stats-base-mskrange' );
 ```
 
 #### mskrange( N, x, strideX, mask, strideMask )
@@ -81,7 +94,7 @@ The function has the following parameters:
 The `N` and `stride` parameters determine which elements are accessed at runtime. For example, to compute the [range][range] of every other element in `x`,
 
 ```javascript
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
+var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = [ 1.0, 2.0, -7.0, -2.0, 4.0, 3.0, 5.0, 6.0 ];
 var mask = [ 0, 0, 0, 0, 0, 0, 1, 1 ];
@@ -96,9 +109,9 @@ Note that indexing is relative to the first index. To introduce offsets, use [`t
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
+var Uint8Array = require( '@stdlib/array-uint8' );
+var floor = require( '@stdlib/math-base-special-floor' );
 
 var x0 = new Float64Array( [ 2.0, 1.0, -2.0, -2.0, 3.0, 4.0, 5.0, 6.0 ] );
 var x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
@@ -132,7 +145,7 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the `offset` parameter supports indexing semantics based on a starting index. For example, to calculate the [range][range] for every other value in `x` starting from the second value
 
 ```javascript
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
+var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = [ 2.0, 1.0, -2.0, -2.0, 3.0, 4.0, 5.0, 6.0 ];
 var mask = [ 0, 0, 0, 0, 0, 0, 1, 1 ];
@@ -163,17 +176,12 @@ var v = mskrange.ndarray( N, x, 2, 1, mask, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import mskrange from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-mskrange@esm/index.mjs';
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var round = require( '@stdlib/math-base-special-round' );
+var Float64Array = require( '@stdlib/array-float64' );
+var Uint8Array = require( '@stdlib/array-uint8' );
+var mskrange = require( '@stdlib/stats-base-mskrange' );
 
 var mask;
 var x;
@@ -194,10 +202,6 @@ console.log( mask );
 
 var v = mskrange( x.length, x, 1, mask, 1 );
 console.log( v );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -232,7 +236,7 @@ console.log( v );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -262,8 +266,8 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/stats-base-mskrange.svg
 [npm-url]: https://npmjs.org/package/@stdlib/stats-base-mskrange
 
-[test-image]: https://github.com/stdlib-js/stats-base-mskrange/actions/workflows/test.yml/badge.svg?branch=v0.2.0
-[test-url]: https://github.com/stdlib-js/stats-base-mskrange/actions/workflows/test.yml?query=branch:v0.2.0
+[test-image]: https://github.com/stdlib-js/stats-base-mskrange/actions/workflows/test.yml/badge.svg?branch=v0.2.1
+[test-url]: https://github.com/stdlib-js/stats-base-mskrange/actions/workflows/test.yml?query=branch:v0.2.1
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/stats-base-mskrange/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/stats-base-mskrange?branch=main
@@ -303,17 +307,17 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/stats/base/dmskrange]: https://github.com/stdlib-js/stats-base-dmskrange/tree/esm
+[@stdlib/stats/base/dmskrange]: https://github.com/stdlib-js/stats-base-dmskrange
 
-[@stdlib/stats/base/range]: https://github.com/stdlib-js/stats-base-range/tree/esm
+[@stdlib/stats/base/range]: https://github.com/stdlib-js/stats-base-range
 
-[@stdlib/stats/base/mskmax]: https://github.com/stdlib-js/stats-base-mskmax/tree/esm
+[@stdlib/stats/base/mskmax]: https://github.com/stdlib-js/stats-base-mskmax
 
-[@stdlib/stats/base/mskmin]: https://github.com/stdlib-js/stats-base-mskmin/tree/esm
+[@stdlib/stats/base/mskmin]: https://github.com/stdlib-js/stats-base-mskmin
 
-[@stdlib/stats/base/nanrange]: https://github.com/stdlib-js/stats-base-nanrange/tree/esm
+[@stdlib/stats/base/nanrange]: https://github.com/stdlib-js/stats-base-nanrange
 
-[@stdlib/stats/base/smskrange]: https://github.com/stdlib-js/stats-base-smskrange/tree/esm
+[@stdlib/stats/base/smskrange]: https://github.com/stdlib-js/stats-base-smskrange
 
 <!-- </related-links> -->
 
